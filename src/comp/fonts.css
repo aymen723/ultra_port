@@ -1,0 +1,11 @@
+@font-face {
+  font-family: helvetica;
+  src: url("./fonts/HelveticaNeue\ Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Tajawal;
+  src: url("./fonts/Tajawal-Regular.ttf");
+  font-display: swap;
+}

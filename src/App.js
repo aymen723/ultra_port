@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Landingpage from "./comp/landingpage";
+import Ourwork from "./comp/Ourwork";
+import { useState, useEffect } from "react";
+import Loading from "./comp/loading";
+import Socialmedia from "./comp/socialmedia";
 function App() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loading ? (
+        <Loading></Loading>
+      ) : (
+        <div className="App">
+          <Landingpage></Landingpage>
+          <Ourwork></Ourwork>
+          <Socialmedia></Socialmedia>
+        </div>
+      )}
+    </>
   );
 }
 
